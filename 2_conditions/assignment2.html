@@ -1,29 +1,48 @@
 <!Doctype html>
 <html>
-<head>
-<meta charset="utf-8">
-<title>Assignment 2</title>
-</head>
+ <head>
+ <meta charset="utf-8">
+ <title>Assignment 2</title>
+ </head>
+ 
+ <body>
+<script>
+	import java.io.*;
+class Piglatin{
 
-<body>
-    
-    <script>
-        
-		var enter = prompt("Enter a word");
-        
-        original = raw_input('Enter a word:')
-        if len(original) > 0 and original.isalpha():
-        word = original.lower()
-        first = word[0]
-        if first == ('a' or 'e' or 'i' or 'o' or 'u'):
-        new_word = word + way
-        print new_word
-        else:
-        new_word = word[1:] + first + ay
-        print new_word
-        else:
-        print 'empty'
-    
-	</script>
-    </body>
-</html>
+public static void main(String args[])throws IOException
+    {
+
+        BufferedReader br=new BufferedReader (new InputStreamReader(System.in));
+        System.out.print("Enter any word: ");
+        String s=br.readLine();
+
+        s=s.toUpperCase(); //converting the word into Uppercase
+        int l=s.length();
+        int pos=-1;
+        char ch;
+
+        for(int i=0; i<l; i++)
+        {
+            ch=s.charAt(i);
+            if(ch=='A' || ch=='E' || ch=='I' || ch=='O' || ch=='U')
+            {
+                pos=i; //storing the index of the first vowel
+                break;
+            }
+        }
+
+        if(pos!=-1) //printing piglatin only if vowel exists
+        {
+          String a=s.substring(pos); //extracting all alphabets in the word beginning from the 1st vowel
+          String b=s.substring(0,pos); //extracting the alphabets present before the first vowel
+          String pig=a+b+"AY"; //adding "AY" at the end of the extracted words after joining them
+          System.out.println("The Piglatin of the word = "+pig);
+        }
+        else
+          System.out.println("No vowel, hence piglatin not possible");
+    }
+}
+</script>
+</body>
+</html> 
