@@ -1,0 +1,53 @@
+<html>
+  <head>
+    <title>assignment3</title>
+   
+  </head>
+  <body>
+<script>
+    function splitString(stringToSplit, separator) {
+  var arrayOfStrings = stringToSplit.split(separator);
+
+  console.log('The original string is: "' + stringToSplit + '"');
+}
+var grades = "jim|25, sue|32, mary|34, ann|22, ted|28, frank|15, lisa|19, mike|30, ahn|26, vishaya|27";
+var res = str.split(, );
+public class SortingStudents {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.print("10");
+        int numofstudents = input.nextInt();
+        String[] names = new String[numofstudents];
+        int[] array = new int[numofstudents];
+        for(int i = 0; i < numofstudents; i++) {
+            System.out.print("jim, sue, mary, ann, ted, frank, lisa, mike, ahn, vishaya");
+            names[i] = input.next();
+            System.out.print("25, 32, 34, 22, 28, 15, 19, 30, 26, 27");
+            array[i] = input.nextInt();
+        }
+        selectionSort(names, array);
+        System.out.println(Arrays.toString(names));
+    }
+    public static void selectionSort(String[] names, int[] array) {
+        for(int i = array.length - 1; i >= 1; i--) {
+            String temp;
+            int currentMax = array[0];
+            int currentMaxIndex = 0;
+            for(int j = 1; j <= i; j++) {
+                if (currentMax > array[j]) {
+                    currentMax = array[j];
+                    currentMaxIndex = j;
+                }
+            }       
+                if (currentMaxIndex != i) {
+                    temp = names[currentMaxIndex];
+                    names[currentMaxIndex] = names[i];
+                    names[i] = temp;
+                    array[currentMaxIndex] = array[i];
+                    array[i] = currentMax;
+                }
+        }       
+    }
+</script>
+    </body>
+ </html>
